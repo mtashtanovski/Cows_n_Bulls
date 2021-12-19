@@ -9,5 +9,17 @@
 </head>
 <body>
     <h1>Gameplay</h1>
+    <div>
+        <p>Guess 4 numbers. Enter them separated with spaces:</p>
+            <form method="POST" action="/game/">
+                {% csrf_token %}
+                <input type="text" name="user_numbers"/>
+                <input type="submit" value="Guess"/>
+            </form>
+        <br/>
+        <h2>{{ context }}</h2>
+        <p><a href="/history">History</a></p>
+        <p><a href="/">Exit game</a></p>
+    </div>
 </body>
 </html>
